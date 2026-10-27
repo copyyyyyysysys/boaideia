@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -38,7 +38,7 @@
   <link rel="preload" href="assets/images/renatha.webp" as="image" type="image/webp">
 
   <!-- Estilos com Cache-Busting ?v=7 -->
-  <link rel="stylesheet" href="styles.css?v=7">
+  <link rel="stylesheet" href="styles.css?v=8">
 
   <!-- Schema JSON-LD -->
   <script type="application/ld+json">
@@ -135,99 +135,109 @@
     </section>
 
     <!-- SEÇÃO 2: ÁREAS DE ATUAÇÃO — GSAP NEON PARALLAX NO SCROLL COM LINHA PROGRESSIVA -->
-    <section class="section neon-parallax-section" id="areas" aria-labelledby="areas-title">
-      <!-- Linha Vertical de Luz Neon que Acompanha o Scroll Descendo -->
-      <div class="neon-scroll-rail" aria-hidden="true">
-        <div class="neon-scroll-beam" id="neonScrollBeam"></div>
-      </div>
-
+    <!-- SEÃ‡ÃƒO 2: ÃREAS DE ATUAÃ‡ÃƒO â€” GSAP NEON TIPOGRÃFICO COM SCROLL SCRUB & PARALLAX -->
+    <section class="section neon-typographic-section" id="areas" aria-labelledby="areas-title">
       <div class="container">
         <div class="section-header-center">
           <span class="section-kicker-glow gsap-fade">Especialidades</span>
           <h2 id="areas-title" class="section-title-dark gsap-fade">
-            Áreas de Atuação
+            Ãreas de AtuaÃ§Ã£o
           </h2>
           <p class="section-subtitle-dark gsap-fade">
-            Projetos autorais desenvolvidos em diálogo constante com a essência de cada proposta.
+            Projetos autorais desenvolvidos em diÃ¡logo constante com a essÃªncia de cada proposta.
           </p>
         </div>
 
-        <!-- Cards Neon de Vidro com Parallax Dinâmico Individual por Scroll -->
-        <div class="neon-parallax-track" id="neonTrack">
-          <!-- Card 1: Marcas -->
-          <article class="neon-glass-card parallax-card" data-speed="16" role="article">
-            <div class="neon-card-glow-layer" aria-hidden="true"></div>
-            <div class="neon-card-top">
-              <span class="neon-card-index">01</span>
-              <div class="neon-dot-active" aria-hidden="true"></div>
+        <!-- Lista TipogrÃ¡fica Pura (Sem cards) com Neon e Parallax Scrub -->
+        <div class="neon-typographic-list" id="neonTypoList" role="list">
+          <!-- Item 01: Marcas -->
+          <article class="neon-typo-item" data-speed="18" data-index="0" role="listitem">
+            <div class="neon-typo-lead">
+              <span class="neon-typo-num">01</span>
+              <div class="neon-typo-dot" aria-hidden="true"></div>
             </div>
-            <h3 class="neon-card-title">Marcas</h3>
-            <p class="neon-card-desc">
-              Identidades visuais completas, logotipos, paleta cromática personalizada e papelaria institucional com conceito e harmonia.
-            </p>
-            <div class="neon-card-accent-line" aria-hidden="true"></div>
+            <div class="neon-typo-content">
+              <h3 class="neon-typo-title">Marcas</h3>
+              <p class="neon-typo-desc">
+                Identidades visuais completas, logotipos, paleta cromÃ¡tica personalizada e papelaria institucional com conceito e harmonia.
+              </p>
+            </div>
+            <div class="neon-typo-line" aria-hidden="true">
+              <div class="neon-typo-glow-bar"></div>
+            </div>
           </article>
 
-          <!-- Card 2: Casamentos -->
-          <article class="neon-glass-card parallax-card card-offset-stagger" data-speed="-18" role="article">
-            <div class="neon-card-glow-layer" aria-hidden="true"></div>
-            <div class="neon-card-top">
-              <span class="neon-card-index">02</span>
-              <div class="neon-dot-active" aria-hidden="true"></div>
+          <!-- Item 02: Casamentos -->
+          <article class="neon-typo-item" data-speed="-14" data-index="1" role="listitem">
+            <div class="neon-typo-lead">
+              <span class="neon-typo-num">02</span>
+              <div class="neon-typo-dot" aria-hidden="true"></div>
             </div>
-            <h3 class="neon-card-title">Casamentos</h3>
-            <p class="neon-card-desc">
-              Monogramas entrelaçados, identidade visual completa para a cerimônia, papelaria fina e lembranças que eternizam a união.
-            </p>
-            <div class="neon-card-accent-line" aria-hidden="true"></div>
+            <div class="neon-typo-content">
+              <h3 class="neon-typo-title">Casamentos</h3>
+              <p class="neon-typo-desc">
+                Monogramas entrelaÃ§ados, identidade visual completa para a cerimÃ´nia, papelaria fina e lembranÃ§as que eternizam a uniÃ£o.
+              </p>
+            </div>
+            <div class="neon-typo-line" aria-hidden="true">
+              <div class="neon-typo-glow-bar"></div>
+            </div>
           </article>
 
-          <!-- Card 3: Maternidade -->
-          <article class="neon-glass-card parallax-card" data-speed="20" role="article">
-            <div class="neon-card-glow-layer" aria-hidden="true"></div>
-            <div class="neon-card-top">
-              <span class="neon-card-index">03</span>
-              <div class="neon-dot-active" aria-hidden="true"></div>
+          <!-- Item 03: Maternidade -->
+          <article class="neon-typo-item" data-speed="22" data-index="2" role="listitem">
+            <div class="neon-typo-lead">
+              <span class="neon-typo-num">03</span>
+              <div class="neon-typo-dot" aria-hidden="true"></div>
             </div>
-            <h3 class="neon-card-title">Maternidade</h3>
-            <p class="neon-card-desc">
-              Composições visuais afetuosas e delicadas para celebrações de nascimento, anúncios, enxoval e registros de boas-vindas.
-            </p>
-            <div class="neon-card-accent-line" aria-hidden="true"></div>
+            <div class="neon-typo-content">
+              <h3 class="neon-typo-title">Maternidade</h3>
+              <p class="neon-typo-desc">
+                ComposiÃ§Ãµes visuais afetuosas e delicadas para celebraÃ§Ãµes de nascimento, anÃºncios, enxoval e registros de boas-vindas.
+              </p>
+            </div>
+            <div class="neon-typo-line" aria-hidden="true">
+              <div class="neon-typo-glow-bar"></div>
+            </div>
           </article>
 
-          <!-- Card 4: Celebrações -->
-          <article class="neon-glass-card parallax-card card-offset-stagger" data-speed="-14" role="article">
-            <div class="neon-card-glow-layer" aria-hidden="true"></div>
-            <div class="neon-card-top">
-              <span class="neon-card-index">04</span>
-              <div class="neon-dot-active" aria-hidden="true"></div>
+          <!-- Item 04: CelebraÃ§Ãµes -->
+          <article class="neon-typo-item" data-speed="-16" data-index="3" role="listitem">
+            <div class="neon-typo-lead">
+              <span class="neon-typo-num">04</span>
+              <div class="neon-typo-dot" aria-hidden="true"></div>
             </div>
-            <h3 class="neon-card-title">Celebrações</h3>
-            <p class="neon-card-desc">
-              Design temático exclusivo para aniversários, celebrações e datas marcantes com acabamento sofisticado e memorável.
-            </p>
-            <div class="neon-card-accent-line" aria-hidden="true"></div>
+            <div class="neon-typo-content">
+              <h3 class="neon-typo-title">CelebraÃ§Ãµes</h3>
+              <p class="neon-typo-desc">
+                Design temÃ¡tico exclusivo para aniversÃ¡rios, celebraÃ§Ãµes e datas marcantes com acabamento sofisticado e memorÃ¡vel.
+              </p>
+            </div>
+            <div class="neon-typo-line" aria-hidden="true">
+              <div class="neon-typo-glow-bar"></div>
+            </div>
           </article>
 
-          <!-- Card 5: Design de Posts -->
-          <article class="neon-glass-card parallax-card card-span-full" data-speed="10" role="article">
-            <div class="neon-card-glow-layer" aria-hidden="true"></div>
-            <div class="neon-card-top">
-              <span class="neon-card-index">05</span>
-              <div class="neon-dot-active" aria-hidden="true"></div>
+          <!-- Item 05: Design de Posts -->
+          <article class="neon-typo-item" data-speed="14" data-index="4" role="listitem">
+            <div class="neon-typo-lead">
+              <span class="neon-typo-num">05</span>
+              <div class="neon-typo-dot" aria-hidden="true"></div>
             </div>
-            <h3 class="neon-card-title">Design de Posts</h3>
-            <p class="neon-card-desc">
-              Composições digitais consistentes, elegantes e alinhadas à narrativa visual e ao posicionamento de alto padrão nas redes sociais.
-            </p>
-            <div class="neon-card-accent-line" aria-hidden="true"></div>
+            <div class="neon-typo-content">
+              <h3 class="neon-typo-title">Design de Posts</h3>
+              <p class="neon-typo-desc">
+                ComposiÃ§Ãµes digitais consistentes, elegantes e alinhadas Ã  narrativa visual e ao posicionamento de alto padrÃ£o nas redes sociais.
+              </p>
+            </div>
+            <div class="neon-typo-line" aria-hidden="true">
+              <div class="neon-typo-glow-bar"></div>
+            </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 3: EXPOSIÇÃO DE PROJETOS EM GRID COMPACTO & DEMONSTRATIVO (Sem imagens gigantes) -->
     <section class="section exhibition-grid-section" id="exposicao" aria-labelledby="exhibition-title">
       <div class="container">
         <div class="section-header-center">
@@ -489,6 +499,6 @@
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
   <!-- Script Principal com Cache-Busting ?v=7 -->
-  <script src="script.js?v=7" defer></script>
+  <script src="script.js?v=8" defer></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-/* ==========================================================================
+﻿/* ==========================================================================
    BOAIDEIA — RENATHA CAVALCANTI | ESTÚDIO DE IDENTIDADE VISUAL
    Design System de Alto Nível: Tema Claro + Escuro Mesclado (Site 1 só)
    Botões Canônicos Premium + Áreas Neon GSAP Parallax + Grid Compacto
@@ -1021,22 +1021,33 @@ button {
     align-items: center;
   }
 
-  .neon-parallax-track {
-    grid-template-columns: 1fr;
-    gap: 24px;
+  .neon-typographic-section {
+    padding-top: 90px;
+    padding-bottom: 90px;
   }
 
-  .card-offset-stagger {
-    margin-top: 0;
+  .neon-typographic-list {
+    gap: 16px;
+    margin-top: 40px;
   }
 
-  .card-span-full {
-    grid-column: span 1;
-    max-width: 100%;
+  .neon-typo-item {
+    grid-template-columns: 50px 1fr;
+    gap: 14px;
+    padding: 22px 0 16px;
   }
 
-  .neon-scroll-rail {
-    display: none;
+  .neon-typo-num {
+    font-size: 0.95rem;
+  }
+
+  .neon-typo-title {
+    font-size: 1.85rem;
+  }
+
+  .neon-typo-desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
   }
 
   .about-artist-showcase {
@@ -1173,5 +1184,31 @@ button {
 
   .parallax-card {
     transform: none !important;
+  }
+}
+
+/* Acessibilidade: prefers-reduced-motion (sem parallax e com neon estÃ¡tico) */
+@media (prefers-reduced-motion: reduce) {
+  .neon-typo-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  .neon-typo-num {
+    color: var(--teal-neon) !important;
+  }
+  .neon-typo-dot {
+    opacity: 1 !important;
+    transform: scale(1) !important;
+  }
+  .neon-typo-title {
+    color: #ffffff !important;
+    text-shadow: 0 0 14px rgba(45, 212, 191, 0.6) !important;
+  }
+  .neon-typo-desc {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+  .neon-typo-glow-bar {
+    transform: scaleX(1) !important;
+    opacity: 0.8 !important;
   }
 }
