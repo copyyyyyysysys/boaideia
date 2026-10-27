@@ -1,26 +1,26 @@
-﻿/**
- * BOAIDEIA â€” RENATHA CAVALCANTI
- * Script Principal v8: Lenis + GSAP 3.12.5 + ScrollTrigger
- * GSAP Neon Scrub TipogrÃ¡fico ContÃ­nuo (Acende e Apaga no Scroll Real) + Parallax Depth
+/**
+ * BOAIDEIA — RENATHA CAVALCANTI
+ * Script Principal v9: Lenis + GSAP 3.12.5 + ScrollTrigger
+ * GSAP Neon Scrub Tipográfico Contínuo (Acende e Apaga no Scroll Real) + Parallax Depth
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ==========================================================================
-     1. INICIALIZAÃ‡ÃƒO LENIS (SMOOTH SCROLL) & GSAP TICKER
+     1. INICIALIZAÇÃO LENIS (SMOOTH SCROLL) & GSAP TICKER
      ========================================================================== */
   let lenis = null;
 
   if (!isReducedMotion && typeof Lenis !== 'undefined') {
     lenis = new Lenis({
-      duration: 1.15,
+      duration: 1.1,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
       smoothWheel: true,
       wheelMultiplier: 0.95,
-      touchMultiplier: 1.2,
+      syncTouch: false,
       infinite: false
     });
 
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     2. ANIMAÃ‡Ã•ES GSAP & NEON TIPOGRÃFICO COM SCROLL SCRUB CONTÃNUO
+     2. ANIMAÇÕES GSAP & NEON TIPOGRÁFICO COM SCROLL SCRUB CONTÍNUO
      ========================================================================== */
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !isReducedMotion) {
     gsap.registerPlugin(ScrollTrigger);
@@ -67,8 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // GSAP SCROLLTRIGGER SCRUB: NEON TIPOGRÃFICO QUE ACENDE E APAGA NO SCROLL REAL
-    // Funciona de forma idÃªntica no Desktop e no Mobile (390px em coluna)
+    // GSAP SCROLLTRIGGER SCRUB: NEON TIPOGRÁFICO QUE ACENDE E APAGA NO SCROLL REAL
+    // Funciona com máxima fidelidade no Desktop e no Mobile (390px em coluna)
     const typoItems = document.querySelectorAll('.neon-typographic-list .neon-typo-item');
     typoItems.forEach((item) => {
       const speed = parseFloat(item.getAttribute('data-speed')) || 10;
@@ -78,30 +78,29 @@ document.addEventListener('DOMContentLoaded', () => {
       const num = item.querySelector('.neon-typo-num');
       const desc = item.querySelector('.neon-typo-desc');
 
-      // 1. Parallax de profundidade com transform (yPercent) scrubbed continuamente
+      // 1. Parallax de profundidade por transform
       gsap.to(item, {
         scrollTrigger: {
           trigger: item,
           start: 'top bottom',
           end: 'bottom top',
-          scrub: 1.2
+          scrub: 1.0
         },
-        y: speed * 2.2,
+        y: speed * 2.0,
         ease: 'none'
       });
 
-      // 2. Timeline de Neon Scrub: acende ao entrar no centro do scroll e apaga ao sair
-      // Bidirecional contÃ­nuo com scrub: sobe acendendo/apagando e desce acendendo/apagando
+      // 2. Timeline de Neon Scrub: acende no centro e apaga ao sair (bidirecional com scroll)
       const neonTl = gsap.timeline({
         scrollTrigger: {
           trigger: item,
-          start: 'top 85%',
-          end: 'bottom 15%',
-          scrub: 0.8
+          start: 'top 82%',
+          end: 'bottom 18%',
+          scrub: 0.6
         }
       });
 
-      // Fase de acendimento (entrada atÃ© o centro do viewport)
+      // Fase de ignição ao entrar no viewport
       neonTl.fromTo(item, 
         { opacity: 0.35 }, 
         { opacity: 1, duration: 0.45, ease: 'power1.out' }
@@ -116,14 +115,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (dot) {
         neonTl.fromTo(dot, 
           { scale: 0.6, opacity: 0.2 }, 
-          { scale: 1.15, opacity: 1, duration: 0.45, ease: 'power1.out' }, 
+          { scale: 1.2, opacity: 1, duration: 0.45, ease: 'power1.out' }, 
           '<'
         );
       }
       if (title) {
         neonTl.to(title, {
           color: '#ffffff',
-          textShadow: '0 0 18px rgba(45, 212, 191, 0.85), 0 0 35px rgba(45, 212, 191, 0.35)',
+          textShadow: '0 0 20px rgba(45, 212, 191, 0.9), 0 0 40px rgba(45, 212, 191, 0.45)',
           duration: 0.45,
           ease: 'power1.out'
         }, '<');
@@ -131,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (num) {
         neonTl.to(num, {
           color: '#2dd4bf',
-          textShadow: '0 0 12px rgba(45, 212, 191, 0.65)',
+          textShadow: '0 0 14px rgba(45, 212, 191, 0.8)',
           duration: 0.45,
           ease: 'power1.out'
         }, '<');
@@ -144,10 +143,10 @@ document.addEventListener('DOMContentLoaded', () => {
         }, '<');
       }
 
-      // PlatÃ´ central onde o neon brilha com intensidade mÃ¡xima
+      // Platô central onde o neon brilha com intensidade máxima
       neonTl.to({}, { duration: 0.15 });
 
-      // Fase de atenuaÃ§Ã£o suave ao subir e sair da tela
+      // Fase de atenuação suave ao sair do viewport
       neonTl.to(item, { opacity: 0.35, duration: 0.45, ease: 'power1.in' });
       if (glowBar) {
         neonTl.to(glowBar, { scaleX: 0.08, opacity: 0.15, duration: 0.45, ease: 'power1.in' }, '<');
@@ -157,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (title) {
         neonTl.to(title, {
-          color: 'rgba(255, 255, 255, 0.55)',
+          color: 'rgba(255, 255, 255, 0.45)',
           textShadow: 'none',
           duration: 0.45,
           ease: 'power1.in'
@@ -165,7 +164,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
       if (num) {
         neonTl.to(num, {
-          color: 'rgba(255, 255, 255, 0.45)',
+          color: 'rgba(255, 255, 255, 0.35)',
           textShadow: 'none',
           duration: 0.45,
           ease: 'power1.in'
@@ -180,7 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
-    // RevelaÃ§Ã£o dos CabeÃ§alhos de SeÃ§Ã£o
+    // Revelação dos Cabeçalhos de Seção
     const sectionHeaders = document.querySelectorAll('.section-header-center .gsap-fade');
     sectionHeaders.forEach((el) => {
       gsap.from(el, {
@@ -197,7 +196,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // RevelaÃ§Ã£o dos Itens do Grid Compacto de Projetos
+    // Revelação dos Itens do Grid Compacto de Projetos
     const projectItems = document.querySelectorAll('.compact-demonstrative-grid .project-grid-item');
     if (projectItems.length > 0) {
       gsap.from(projectItems, {
@@ -215,7 +214,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // RevelaÃ§Ã£o da SeÃ§Ã£o de TransiÃ§Ã£o (Sobre + Contato + Final CTA)
+    // Revelação da Seção de Transição (Sobre + Contato + Final CTA)
     const transitionElements = document.querySelectorAll('.atmospheric-transition-section .gsap-fade');
     transitionElements.forEach((el) => {
       gsap.from(el, {
@@ -232,7 +231,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Refresh do ScrollTrigger apÃ³s carregamento de todas as imagens
+    // Refresh do ScrollTrigger após carregamento de todas as imagens
     window.addEventListener('load', () => {
       ScrollTrigger.refresh();
     });
