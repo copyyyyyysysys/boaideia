@@ -1,6 +1,6 @@
 /**
  * BOAIDEIA — RENATHA CAVALCANTI
- * Script Principal v9: Lenis + GSAP 3.12.5 + ScrollTrigger
+ * Script Principal v11: Lenis + GSAP 3.12.5 + ScrollTrigger
  * GSAP Neon Scrub Tipográfico Contínuo (Acende e Apaga no Scroll Real) + Parallax Depth
  */
 
