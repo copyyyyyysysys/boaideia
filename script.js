@@ -1,7 +1,7 @@
 ﻿/**
  * BOAIDEIA — RENATHA CAVALCANTI
- * Script Principal: Integração Lenis (Smooth Scroll) + GSAP 3.12.5 + ScrollTrigger
- * Animações exclusivamente via transform e opacity para 60/120fps fluidos.
+ * Script Principal: Lenis (Smooth Scroll) + GSAP 3.12.5 + ScrollTrigger
+ * Efeito Neon com Parallax nas Áreas de Atuação e Revelações Editoriais Suaves.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -36,55 +36,88 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     2. REVELAÇÕES GSAP & SCROLLTRIGGER (TRANSFORM + OPACITY APENAS)
+     2. REVELAÇÕES GSAP & PARALLAX NEON
      ========================================================================== */
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !isReducedMotion) {
     gsap.registerPlugin(ScrollTrigger);
 
-    // Animação de entrada do Hero
-    const heroElements = document.querySelectorAll('.hero-content .gsap-fade');
+    // Entrada suave da Hero (Portfólio de Artista)
+    const heroElements = document.querySelectorAll('.hero-artist-content .gsap-fade');
     if (heroElements.length > 0) {
       gsap.from(heroElements, {
         opacity: 0,
-        y: 35,
-        duration: 0.9,
-        stagger: 0.12,
+        y: 40,
+        duration: 1.0,
+        stagger: 0.14,
         ease: 'power3.out',
         clearProps: 'all'
       });
     }
 
-    const heroVisual = document.querySelector('.hero-visual');
+    const heroVisual = document.querySelector('.hero-artist-visual');
     if (heroVisual) {
       gsap.from(heroVisual, {
         opacity: 0,
-        y: 45,
-        duration: 1.0,
+        y: 50,
+        duration: 1.1,
         ease: 'power3.out',
         delay: 0.2,
         clearProps: 'all'
       });
     }
 
-    // Parallax sutil no ambient glow da hero
-    const ambientGlow = document.querySelector('.ambient-glow');
-    if (ambientGlow) {
-      gsap.to(ambientGlow, {
+    // Parallax no Ambient Glow da Hero
+    const heroGlow = document.querySelector('.hero-backdrop-glow');
+    if (heroGlow) {
+      gsap.to(heroGlow, {
         scrollTrigger: {
-          trigger: '.hero-section',
+          trigger: '.hero-artist',
           start: 'top top',
           end: 'bottom top',
           scrub: 1
         },
-        y: 80,
-        opacity: 0.4,
+        y: 90,
+        opacity: 0.3,
         ease: 'none'
       });
     }
 
-    // Revelação dos títulos das seções
-    const sectionHeaders = document.querySelectorAll('.section-header .gsap-fade');
-    sectionHeaders.forEach((el) => {
+    // ÁREAS DE ATUAÇÃO EM NEON COM PARALLAX POR LINHA
+    const neonItems = document.querySelectorAll('.neon-typography-composition .parallax-item');
+    if (neonItems.length > 0) {
+      // Acendimento e entrada dos textos neon conforme a seção entra na tela
+      gsap.from(neonItems, {
+        scrollTrigger: {
+          trigger: '.neon-services-section',
+          start: 'top 80%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0.2,
+        y: 45,
+        duration: 1.0,
+        stagger: 0.12,
+        ease: 'power3.out'
+      });
+
+      // Efeito Parallax diferenciado por profundidade em cada item
+      neonItems.forEach((item) => {
+        const speed = parseFloat(item.getAttribute('data-speed')) || -20;
+        gsap.to(item, {
+          scrollTrigger: {
+            trigger: '.neon-services-section',
+            start: 'top bottom',
+            end: 'bottom top',
+            scrub: 1.2
+          },
+          yPercent: speed,
+          ease: 'none'
+        });
+      });
+    }
+
+    // Revelação dos Títulos de Seção
+    const editorialHeaders = document.querySelectorAll('.editorial-kicker, .gallery-header .gsap-fade, .contact-header .gsap-fade');
+    editorialHeaders.forEach((el) => {
       gsap.from(el, {
         scrollTrigger: {
           trigger: el,
@@ -99,78 +132,60 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Revelação dos Cards de Serviços
-    const serviceCards = document.querySelectorAll('.services-grid .service-card');
-    if (serviceCards.length > 0) {
-      gsap.from(serviceCards, {
+    // Revelação da Galeria de Obras (Galeria de Arte)
+    const artPieces = document.querySelectorAll('.art-gallery-flow .art-piece');
+    artPieces.forEach((piece) => {
+      gsap.from(piece, {
         scrollTrigger: {
-          trigger: '.services-grid',
-          start: 'top 85%',
+          trigger: piece,
+          start: 'top 86%',
           toggleActions: 'play none none none'
         },
         opacity: 0,
-        y: 35,
-        duration: 0.75,
-        stagger: 0.1,
+        y: 45,
+        duration: 0.85,
         ease: 'power3.out',
         clearProps: 'all'
       });
-    }
+    });
 
-    // Revelação dos Cards de Portfólio
-    const projectCards = document.querySelectorAll('.portfolio-grid .project-card');
-    if (projectCards.length > 0) {
-      gsap.from(projectCards, {
+    // Revelação da Seção Sobre a Criadora
+    const aboutLayout = document.querySelector('.about-artist-layout');
+    if (aboutLayout) {
+      gsap.from(aboutLayout.querySelectorAll('.gsap-fade'), {
         scrollTrigger: {
-          trigger: '.portfolio-grid',
-          start: 'top 85%',
-          toggleActions: 'play none none none'
-        },
-        opacity: 0,
-        y: 40,
-        duration: 0.8,
-        stagger: 0.12,
-        ease: 'power3.out',
-        clearProps: 'all'
-      });
-    }
-
-    // Revelação do Card da Designer (Sobre)
-    const aboutCard = document.querySelector('.about-card');
-    if (aboutCard) {
-      gsap.from(aboutCard, {
-        scrollTrigger: {
-          trigger: aboutCard,
-          start: 'top 85%',
+          trigger: aboutLayout,
+          start: 'top 84%',
           toggleActions: 'play none none none'
         },
         opacity: 0,
         y: 35,
         duration: 0.85,
-        ease: 'power3.out',
-        clearProps: 'all'
-      });
-    }
-
-    // Revelação dos Cards de Contato & Horários
-    const contactCards = document.querySelectorAll('.schedule-card, .channels-card');
-    if (contactCards.length > 0) {
-      gsap.from(contactCards, {
-        scrollTrigger: {
-          trigger: '.contact-grid',
-          start: 'top 85%',
-          toggleActions: 'play none none none'
-        },
-        opacity: 0,
-        y: 32,
-        duration: 0.8,
         stagger: 0.15,
         ease: 'power3.out',
         clearProps: 'all'
       });
     }
 
-    // Atualização do ScrollTrigger quando todas as imagens carregarem
+    // Revelação dos Cards de Contato & Horários
+    const contactBoxes = document.querySelectorAll('.schedule-box, .channels-box');
+    if (contactBoxes.length > 0) {
+      gsap.from(contactBoxes, {
+        scrollTrigger: {
+          trigger: '.contact-cards-wrap',
+          start: 'top 86%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        stagger: 0.14,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    }
+
+    // Atualização de posições após carregamento das imagens
     window.addEventListener('load', () => {
       ScrollTrigger.refresh();
     });
