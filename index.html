@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -37,8 +37,8 @@
   <!-- Preload da foto da designer -->
   <link rel="preload" href="assets/images/renatha.webp" as="image" type="image/webp">
 
-  <!-- Estilos com Cache-Busting ?v=3 -->
-  <link rel="stylesheet" href="styles.css?v=3">
+  <!-- Estilos com Cache-Busting ?v=4 -->
+  <link rel="stylesheet" href="styles.css?v=4">
 
   <!-- Schema JSON-LD -->
   <script type="application/ld+json">
@@ -75,7 +75,7 @@
   </script>
 </head>
 <body>
-  <!-- Header Minimalista com Vidro e Monograma -->
+  <!-- Header Minimalista com Vidro e Monograma (Totalmente responsivo e livre de quebras) -->
   <header class="site-header" id="topo">
     <div class="header-container">
       <a href="#topo" class="header-brand" aria-label="Boaideia - Início">
@@ -87,9 +87,12 @@
       </a>
 
       <div class="header-nav-actions">
-        <a href="#areas-de-atuacao" class="header-nav-link">Áreas de Atuação</a>
-        <a href="#galeria" class="header-nav-link">Galeria</a>
-        <a href="#sobre" class="header-nav-link">A Designer</a>
+        <nav class="header-nav-menu" aria-label="Navegação principal">
+          <a href="#areas-de-atuacao" class="header-nav-link">Áreas de Atuação</a>
+          <a href="#exposicao" class="header-nav-link">Exposição de Obras</a>
+          <a href="#sobre" class="header-nav-link">A Designer</a>
+          <a href="#contato" class="header-nav-link">Atendimento</a>
+        </nav>
         <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." 
            class="header-quick-action" 
            target="_blank" 
@@ -98,25 +101,30 @@
           <svg class="icon-svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
             <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
           </svg>
-          <span>CONVERSAR NO WHATSAPP</span>
+          <span class="nav-btn-text-desktop">CONVERSAR NO WHATSAPP</span>
+          <span class="nav-btn-text-mobile">WHATSAPP</span>
         </a>
       </div>
     </div>
   </header>
 
   <main id="conteudo-principal">
-    <!-- SEÇÃO 1: HERO COM ATMOSFERA DE PORTFÓLIO DE ALTA FIDELIDADE -->
+    <!-- SEÇÃO 1: HERO DE ALTA FIDELIDADE COM RIQUEZA DE DETALHES DECORATIVOS -->
     <section class="section hero-artist" id="hero" aria-labelledby="hero-title">
-      <!-- Watermark e Auras Dinâmicas de Luz -->
-      <div class="hero-watermark-text" aria-hidden="true">BOAIDEIA</div>
-      <div class="ambient-glow glow-1" aria-hidden="true"></div>
-      <div class="ambient-glow glow-2" aria-hidden="true"></div>
+      <!-- Elementos Decorativos de Imersão: Watermark Parallax, Auras e Gridlines -->
+      <div class="parallax-watermark hero-watermark-text" aria-hidden="true">BOAIDEIA</div>
+      <div class="ambient-glow glow-hero-1" aria-hidden="true"></div>
+      <div class="ambient-glow glow-hero-2" aria-hidden="true"></div>
+      <div class="deco-crosshair deco-hero-tl" aria-hidden="true">+</div>
+      <div class="deco-crosshair deco-hero-br" aria-hidden="true">+</div>
 
       <div class="container hero-artist-grid">
         <div class="hero-artist-content">
+          <!-- Marcador Arquitetural de Estúdio -->
           <div class="editorial-line gsap-fade">
             <span class="editorial-line-dash" aria-hidden="true"></span>
             <span class="editorial-line-text">Estúdio Autoral de Identidade Visual</span>
+            <span class="editorial-line-coord" aria-hidden="true">[EST. 2024]</span>
           </div>
 
           <h1 id="hero-title" class="hero-artist-title gsap-fade">
@@ -140,11 +148,24 @@
             </a>
             <span class="cta-subtext">Atendimento direto com a designer Renatha Cavalcanti</span>
           </div>
+
+          <!-- Micro Badge Decorativo de Ateliê -->
+          <div class="hero-micro-metrics gsap-fade" aria-hidden="true">
+            <div class="metric-pill">
+              <span class="metric-dot"></span>
+              <span class="metric-label">Design Autoral & Exclusivo</span>
+            </div>
+            <div class="metric-pill">
+              <span class="metric-dot"></span>
+              <span class="metric-label">Atendimento Humanizado</span>
+            </div>
+          </div>
         </div>
 
         <!-- Foto da Designer Perfeitamente Integrada ao Cenário com Aura Verde Água -->
         <div class="hero-artist-visual gsap-fade">
           <div class="portrait-aura-glow" aria-hidden="true"></div>
+          <div class="portrait-backdrop-frame" aria-hidden="true"></div>
           <img src="assets/images/renatha.webp" 
                alt="Renatha Cavalcanti, designer de identidade visual" 
                width="640" 
@@ -152,15 +173,24 @@
                class="artist-integrated-photo">
         </div>
       </div>
+
+      <!-- Linha Arquitetural Divisória com Gradiente Suave -->
+      <div class="section-divider-line" aria-hidden="true">
+        <span class="divider-dot"></span>
+      </div>
     </section>
 
     <!-- SEÇÃO 2: ÁREAS DE ATUAÇÃO EM CARDS NEON GSAP COM PARALLAX NO SCROLL -->
     <section class="section neon-services-section" id="areas-de-atuacao" aria-labelledby="services-title">
       <div class="neon-ambient-glow" aria-hidden="true"></div>
+      <div class="neon-grid-pattern" aria-hidden="true"></div>
 
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-kicker gsap-fade">Especialidades</span>
+          <div class="kicker-pill gsap-fade">
+            <span class="kicker-glow-dot" aria-hidden="true"></span>
+            <span class="section-kicker">Especialidades</span>
+          </div>
           <h2 id="services-title" class="section-title gsap-fade">
             Áreas de Atuação
           </h2>
@@ -169,10 +199,10 @@
           </p>
         </div>
 
-        <!-- Grid de Cards Neon com Parallax Dinâmico e Linha de Luz Progressiva -->
+        <!-- Grid de Cards Neon com Parallax Dinâmico e Linhas de Luz -->
         <div class="neon-cards-track" id="neonCardsTrack">
           <!-- Card 1: Marcas -->
-          <article class="neon-card parallax-card" data-speed="15" role="article">
+          <article class="neon-card parallax-card" data-speed="16" role="article">
             <div class="neon-card-glow" aria-hidden="true"></div>
             <div class="neon-card-header">
               <span class="neon-card-number">01</span>
@@ -186,7 +216,7 @@
           </article>
 
           <!-- Card 2: Casamentos -->
-          <article class="neon-card parallax-card card-offset-down" data-speed="-20" role="article">
+          <article class="neon-card parallax-card card-offset-down" data-speed="-18" role="article">
             <div class="neon-card-glow" aria-hidden="true"></div>
             <div class="neon-card-header">
               <span class="neon-card-number">02</span>
@@ -200,7 +230,7 @@
           </article>
 
           <!-- Card 3: Maternidade -->
-          <article class="neon-card parallax-card" data-speed="25" role="article">
+          <article class="neon-card parallax-card" data-speed="22" role="article">
             <div class="neon-card-glow" aria-hidden="true"></div>
             <div class="neon-card-header">
               <span class="neon-card-number">03</span>
@@ -214,7 +244,7 @@
           </article>
 
           <!-- Card 4: Celebrações -->
-          <article class="neon-card parallax-card card-offset-down" data-speed="-15" role="article">
+          <article class="neon-card parallax-card card-offset-down" data-speed="-14" role="article">
             <div class="neon-card-glow" aria-hidden="true"></div>
             <div class="neon-card-header">
               <span class="neon-card-number">04</span>
@@ -244,176 +274,257 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 3: GALERIA DE PROJETOS DE ALTO IMPACTO (Editorial Elegante, Sem Voids, Sem Bugs de Desktop) -->
-    <section class="section gallery-section" id="galeria" aria-labelledby="gallery-title">
+    <!-- SEÇÃO 3: EXPOSIÇÃO DE OBRAS — FORMATO GALERIA DE ARTE EDITORIAL (FORA DO ESTILO DE CARDS) -->
+    <section class="section exhibition-gallery-section" id="exposicao" aria-labelledby="exhibition-title">
+      <!-- Watermark Parallax de Fundo & Auras de Luz Sutil (Preservando Fundo Claro Nobre) -->
+      <div class="parallax-watermark gallery-watermark-text" aria-hidden="true">EXPOSITION</div>
+      <div class="ambient-glow glow-gallery-1" aria-hidden="true"></div>
+      <div class="ambient-glow glow-gallery-2" aria-hidden="true"></div>
+
       <div class="container">
+        <!-- Cabeçalho Curatorial de Galeria -->
         <div class="section-header text-center">
-          <span class="section-kicker gsap-fade">Portfólio Selecionado</span>
-          <h2 id="gallery-title" class="section-title gsap-fade">
-            Galeria de Obras
+          <div class="kicker-pill gsap-fade">
+            <span class="kicker-glow-dot" aria-hidden="true"></span>
+            <span class="section-kicker">Mostra Autoral • Coleção Selecionada</span>
+          </div>
+          <h2 id="exhibition-title" class="section-title gsap-fade">
+            Exposição de Obras
           </h2>
           <p class="section-subtitle gsap-fade">
-            Uma mostra curada de identidades visuais desenvolvidas pela designer Renatha Cavalcanti.
+            Uma curadoria de identidades visuais e projetos gráficos criados por Renatha Cavalcanti com rigor estético e sensibilidade.
           </p>
         </div>
 
-        <!-- Grade de Galeria de Arte Estruturada & Refinada -->
-        <div class="gallery-curated-grid" role="list">
-          <!-- Obra 1: Emylle Costa -->
-          <article class="gallery-item-card gsap-fade" role="listitem">
-            <div class="gallery-media-wrapper">
-              <img src="assets/images/projeto-1.webp" 
-                   alt="Identidade visual para Emylle Costa Nutricionista" 
-                   width="900" 
-                   height="1124" 
-                   loading="lazy" 
-                   class="gallery-artwork-img">
-              <div class="gallery-hover-overlay">
-                <span class="gallery-tag">Marcas</span>
+        <!-- FLUXO EDITORIAL DE EXPOSIÇÃO DE ARTE: Sem caixas de cards artificiais -->
+        <div class="exhibition-curated-flow">
+
+          <!-- 1. OBRA MONUMENTAL INAUGURAL: Emylle Costa Nutricionista -->
+          <article class="exhibition-piece piece-monumental gsap-fade" role="article" aria-label="Obra 01: Emylle Costa Nutricionista">
+            <div class="monumental-stage">
+              <div class="stage-visual-container">
+                <div class="stage-ambient-halo" aria-hidden="true"></div>
+                <img src="assets/images/projeto-1.webp" 
+                     alt="Identidade visual completa para Emylle Costa Nutricionista" 
+                     width="900" 
+                     height="1124" 
+                     loading="lazy" 
+                     class="exhibition-artwork-img">
               </div>
-            </div>
-            <div class="gallery-item-caption">
-              <span class="gallery-item-category">Marcas</span>
-              <h3 class="gallery-item-title">Emylle Costa • Nutricionista</h3>
-              <p class="gallery-item-brief">Identidade botânica e papelaria em tons terrosos e naturais.</p>
+
+              <!-- Cartel Curatorial de Museu / Galeria -->
+              <div class="monumental-plaque">
+                <div class="plaque-index-header">
+                  <span class="plaque-numeral">01 / 07</span>
+                  <span class="plaque-category-badge">Marcas & Papelaria</span>
+                </div>
+                <h3 class="plaque-artwork-title">Emylle Costa • Nutricionista</h3>
+                <p class="plaque-artwork-desc">
+                  Identidade visual pautada na nutrição integrativa e no acolhimento. A composição visual une tons botânicos terrosos, tipografia refinada e uma presença sofisticada em cada aplicação de papelaria e embalagem.
+                </p>
+                <div class="plaque-specifications">
+                  <span class="spec-tag">Tipografia Editorial</span>
+                  <span class="spec-tag">Paleta Botânica</span>
+                  <span class="spec-tag">Papelaria Institucional</span>
+                </div>
+              </div>
             </div>
           </article>
 
-          <!-- Obra 2: Benito Café & Arte -->
-          <article class="gallery-item-card gsap-fade" role="listitem">
-            <div class="gallery-media-wrapper">
-              <img src="assets/images/projeto-2.webp" 
-                   alt="Identidade visual artesanal Benito Café & Arte" 
-                   width="900" 
-                   height="900" 
-                   loading="lazy" 
-                   class="gallery-artwork-img">
-              <div class="gallery-hover-overlay">
-                <span class="gallery-tag">Marcas</span>
+          <!-- 2. DÍPTICO EDITORIAL: Benito Café & Lucy Monte -->
+          <div class="exhibition-diptych">
+            <!-- Obra 02: Benito Café & Arte -->
+            <article class="exhibition-piece piece-diptych-item gsap-fade" role="article" aria-label="Obra 02: Benito Café & Arte">
+              <div class="piece-media-stage">
+                <div class="stage-ambient-halo-soft" aria-hidden="true"></div>
+                <img src="assets/images/projeto-2.webp" 
+                     alt="Identidade visual artesanal Benito Café & Arte" 
+                     width="900" 
+                     height="900" 
+                     loading="lazy" 
+                     class="exhibition-artwork-img">
               </div>
-            </div>
-            <div class="gallery-item-caption">
-              <span class="gallery-item-category">Marcas</span>
-              <h3 class="gallery-item-title">Benito • Café & Arte</h3>
-              <p class="gallery-item-brief">Tipografia clássica e ilustração botânica para cafeteria.</p>
-            </div>
-          </article>
+              <div class="piece-curatorial-plaque">
+                <div class="plaque-index-header">
+                  <span class="plaque-numeral">02 / 07</span>
+                  <span class="plaque-category-badge">Identidade Artesanal</span>
+                </div>
+                <h3 class="plaque-artwork-title">Benito • Café & Arte</h3>
+                <p class="plaque-artwork-desc">
+                  Tipografia clássica com ilustração botânica manual, celebrando o café de origem e a atmosfera acolhedora de bistrô contemporâneo.
+                </p>
+                <div class="plaque-specifications">
+                  <span class="spec-tag">Ilustração Botânica</span>
+                  <span class="spec-tag">Uniformes & Canecas</span>
+                </div>
+              </div>
+            </article>
 
-          <!-- Obra 3: Lucy Monte -->
-          <article class="gallery-item-card gsap-fade" role="listitem">
-            <div class="gallery-media-wrapper">
-              <img src="assets/images/projeto-3.webp" 
-                   alt="Cartão de visita Lucy Monte Designer de Sobrancelhas" 
-                   width="900" 
-                   height="1125" 
-                   loading="lazy" 
-                   class="gallery-artwork-img">
-              <div class="gallery-hover-overlay">
-                <span class="gallery-tag">Marcas</span>
+            <!-- Obra 03: Lucy Monte Designer de Sobrancelhas -->
+            <article class="exhibition-piece piece-diptych-item piece-diptych-offset gsap-fade" role="article" aria-label="Obra 03: Lucy Monte Designer de Sobrancelhas">
+              <div class="piece-media-stage">
+                <div class="stage-ambient-halo-soft" aria-hidden="true"></div>
+                <img src="assets/images/projeto-3.webp" 
+                     alt="Cartão de visita Lucy Monte Designer de Sobrancelhas" 
+                     width="900" 
+                     height="1125" 
+                     loading="lazy" 
+                     class="exhibition-artwork-img">
               </div>
-            </div>
-            <div class="gallery-item-caption">
-              <span class="gallery-item-category">Marcas</span>
-              <h3 class="gallery-item-title">Lucy Monte • Designer de Sobrancelhas</h3>
-              <p class="gallery-item-brief">Papelaria e apresentação com estética calorosa e refinada.</p>
-            </div>
-          </article>
+              <div class="piece-curatorial-plaque">
+                <div class="plaque-index-header">
+                  <span class="plaque-numeral">03 / 07</span>
+                  <span class="plaque-category-badge">Papelaria Fina</span>
+                </div>
+                <h3 class="plaque-artwork-title">Lucy Monte • Sobrancelhas</h3>
+                <p class="plaque-artwork-desc">
+                  Cartão de apresentação com textura especial e hot stamping dourado, transmitindo exclusividade, calor humano e acabamento tátil sublime.
+                </p>
+                <div class="plaque-specifications">
+                  <span class="spec-tag">Hot Stamping</span>
+                  <span class="spec-tag">Textura Orgânica</span>
+                </div>
+              </div>
+            </article>
+          </div>
 
-          <!-- Obra 4: JD Beauty -->
-          <article class="gallery-item-card gsap-fade" role="listitem">
-            <div class="gallery-media-wrapper">
-              <img src="assets/images/projeto-4.webp" 
-                   alt="Identidade visual JD Beauty" 
-                   width="900" 
-                   height="1125" 
-                   loading="lazy" 
-                   class="gallery-artwork-img">
-              <div class="gallery-hover-overlay">
-                <span class="gallery-tag">Marcas</span>
+          <!-- 3. DÍPTICO EDITORIAL: JD Beauty & Dr. Yuri Cássio -->
+          <div class="exhibition-diptych">
+            <!-- Obra 04: JD Beauty -->
+            <article class="exhibition-piece piece-diptych-item gsap-fade" role="article" aria-label="Obra 04: JD Beauty">
+              <div class="piece-media-stage">
+                <div class="stage-ambient-halo-soft" aria-hidden="true"></div>
+                <img src="assets/images/projeto-4.webp" 
+                     alt="Identidade visual JD Beauty estética avançada" 
+                     width="900" 
+                     height="1125" 
+                     loading="lazy" 
+                     class="exhibition-artwork-img">
               </div>
-            </div>
-            <div class="gallery-item-caption">
-              <span class="gallery-item-category">Marcas</span>
-              <h3 class="gallery-item-title">JD Beauty</h3>
-              <p class="gallery-item-brief">Monograma dourado e composição estética para clínica de beleza.</p>
-            </div>
-          </article>
+              <div class="piece-curatorial-plaque">
+                <div class="plaque-index-header">
+                  <span class="plaque-numeral">04 / 07</span>
+                  <span class="plaque-category-badge">Clínica & Beleza</span>
+                </div>
+                <h3 class="plaque-artwork-title">JD Beauty • Estética Avançada</h3>
+                <p class="plaque-artwork-desc">
+                  Monograma dourado harmonizado a uma paleta neutra e luminosa, desenvolvida para evidenciar autoridade e sofisticação no mercado de estética.
+                </p>
+                <div class="plaque-specifications">
+                  <span class="spec-tag">Monograma Dourado</span>
+                  <span class="spec-tag">Manual de Marca</span>
+                </div>
+              </div>
+            </article>
 
-          <!-- Obra 5: Dr. Yuri Cássio -->
-          <article class="gallery-item-card gsap-fade" role="listitem">
-            <div class="gallery-media-wrapper">
-              <img src="assets/images/projeto-5.webp" 
-                   alt="Identidade visual para consultório Dr. Yuri Cássio" 
-                   width="900" 
-                   height="1125" 
-                   loading="lazy" 
-                   class="gallery-artwork-img">
-              <div class="gallery-hover-overlay">
-                <span class="gallery-tag">Marcas</span>
+            <!-- Obra 05: Dr. Yuri Cássio Dentista -->
+            <article class="exhibition-piece piece-diptych-item piece-diptych-offset gsap-fade" role="article" aria-label="Obra 05: Dr. Yuri Cássio Dentista">
+              <div class="piece-media-stage">
+                <div class="stage-ambient-halo-soft" aria-hidden="true"></div>
+                <img src="assets/images/projeto-5.webp" 
+                     alt="Identidade visual para consultório Dr. Yuri Cássio" 
+                     width="900" 
+                     height="1125" 
+                     loading="lazy" 
+                     class="exhibition-artwork-img">
               </div>
-            </div>
-            <div class="gallery-item-caption">
-              <span class="gallery-item-category">Marcas</span>
-              <h3 class="gallery-item-title">Dr. Yuri Cássio • Cirurgião Dentista</h3>
-              <p class="gallery-item-brief">Identidade clínica institucional e aplicações funcionais.</p>
-            </div>
-          </article>
+              <div class="piece-curatorial-plaque">
+                <div class="plaque-index-header">
+                  <span class="plaque-numeral">05 / 07</span>
+                  <span class="plaque-category-badge">Identidade Clínica</span>
+                </div>
+                <h3 class="plaque-artwork-title">Dr. Yuri Cássio • Odontologia</h3>
+                <p class="plaque-artwork-desc">
+                  Identidade clínica com equilíbrio impecável entre seriedade técnica e acolhimento humano em aplicações de recepção, papelaria e brindes.
+                </p>
+                <div class="plaque-specifications">
+                  <span class="spec-tag">Branding Clínico</span>
+                  <span class="spec-tag">Papelaria e Acessórios</span>
+                </div>
+              </div>
+            </article>
+          </div>
 
-          <!-- Obra 6: Pedro & Letícia -->
-          <article class="gallery-item-card gsap-fade" role="listitem">
-            <div class="gallery-media-wrapper">
-              <img src="assets/images/projeto-6.webp" 
-                   alt="Identidade de casamento Pedro & Leticia" 
-                   width="900" 
-                   height="1126" 
-                   loading="lazy" 
-                   class="gallery-artwork-img">
-              <div class="gallery-hover-overlay">
-                <span class="gallery-tag">Casamentos & Celebrações</span>
+          <!-- 4. GRAND FINALE DUO: Casamento Pedro & Letícia + Pasta Corporativa Josyelle Rayane -->
+          <div class="exhibition-finale-stage">
+            <!-- Obra 06: Casamento Pedro & Letícia -->
+            <article class="exhibition-piece finale-piece-item gsap-fade" role="article" aria-label="Obra 06: Casamento Pedro & Letícia">
+              <div class="piece-media-stage">
+                <div class="stage-ambient-halo-soft" aria-hidden="true"></div>
+                <img src="assets/images/projeto-6.webp" 
+                     alt="Identidade de casamento Pedro & Leticia" 
+                     width="900" 
+                     height="1126" 
+                     loading="lazy" 
+                     class="exhibition-artwork-img">
               </div>
-            </div>
-            <div class="gallery-item-caption">
-              <span class="gallery-item-category">Casamentos & Celebrações</span>
-              <h3 class="gallery-item-title">Pedro & Letícia</h3>
-              <p class="gallery-item-brief">Monograma entrelaçado e paleta de cores para cerimônia.</p>
-            </div>
-          </article>
+              <div class="piece-curatorial-plaque">
+                <div class="plaque-index-header">
+                  <span class="plaque-numeral">06 / 07</span>
+                  <span class="plaque-category-badge">Casamentos & Celebrações</span>
+                </div>
+                <h3 class="plaque-artwork-title">Pedro & Letícia • Cerimônia</h3>
+                <p class="plaque-artwork-desc">
+                  Monograma matrimonial entrelaçado com curvas clássicas, paleta botânica e papelaria fina que eterniza os votos da união.
+                </p>
+                <div class="plaque-specifications">
+                  <span class="spec-tag">Monograma Matrimonial</span>
+                  <span class="spec-tag">Convites & Lacre</span>
+                </div>
+              </div>
+            </article>
 
-          <!-- Obra 7: Josyelle Rayane -->
-          <article class="gallery-item-card gallery-item-wide gsap-fade" role="listitem">
-            <div class="gallery-media-wrapper">
-              <img src="assets/images/projeto-7.webp" 
-                   alt="Pasta de apresentação Josyelle Rayane" 
-                   width="900" 
-                   height="1125" 
-                   loading="lazy" 
-                   class="gallery-artwork-img">
-              <div class="gallery-hover-overlay">
-                <span class="gallery-tag">Marcas & Papelaria</span>
+            <!-- Obra 07: Pasta Institucional Josyelle Rayane (Panorâmica de Alto Impacto) -->
+            <article class="exhibition-piece finale-piece-item finale-panoramic gsap-fade" role="article" aria-label="Obra 07: Pasta Institucional Josyelle Rayane">
+              <div class="piece-media-stage panoramic-stage">
+                <div class="stage-ambient-halo" aria-hidden="true"></div>
+                <img src="assets/images/projeto-7.webp" 
+                     alt="Pasta institucional Josyelle Rayane em hot stamping dourado" 
+                     width="900" 
+                     height="1125" 
+                     loading="lazy" 
+                     class="exhibition-artwork-img">
               </div>
-            </div>
-            <div class="gallery-item-caption">
-              <span class="gallery-item-category">Marcas & Papelaria</span>
-              <h3 class="gallery-item-title">Josyelle Rayane</h3>
-              <p class="gallery-item-brief">Papelaria e pasta institucional com acabamento refinado.</p>
-            </div>
-          </article>
+              <div class="piece-curatorial-plaque">
+                <div class="plaque-index-header">
+                  <span class="plaque-numeral">07 / 07</span>
+                  <span class="plaque-category-badge">Apresentação Institucional</span>
+                </div>
+                <h3 class="plaque-artwork-title">Josyelle Rayane • Pasta Nobre</h3>
+                <p class="plaque-artwork-desc">
+                  Pasta corporativa com laminação especial e acabamento em hot stamping dourado, desenvolvida para causar impressão indelével em reuniões de negócios.
+                </p>
+                <div class="plaque-specifications">
+                  <span class="spec-tag">Hot Stamping Dourado</span>
+                  <span class="spec-tag">Design Editorial</span>
+                  <span class="spec-tag">Acabamento Gráfico Nobre</span>
+                </div>
+              </div>
+            </article>
+          </div>
+
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 4: A CRIADORA — COMPOSIÇÃO EDITORIAL -->
+    <!-- SEÇÃO 4: A CRIADORA — COMPOSIÇÃO EDITORIAL COM IMERSÃO -->
     <section class="section about-artist-section" id="sobre" aria-labelledby="about-title">
+      <div class="parallax-watermark about-watermark-text" aria-hidden="true">CRIADORA</div>
+      <div class="ambient-glow glow-about-1" aria-hidden="true"></div>
+
       <div class="container">
         <div class="about-artist-box gsap-fade">
           <div class="about-copy-col">
-            <span class="section-kicker">A Designer</span>
+            <div class="kicker-pill">
+              <span class="kicker-glow-dot" aria-hidden="true"></span>
+              <span class="section-kicker">A Designer</span>
+            </div>
             <h2 id="about-title" class="about-name">Renatha Cavalcanti</h2>
             <p class="about-quote">
               "Identidades inspiradas na beleza da criação."
             </p>
             <p class="about-text">
-              Com sensibilidade e escuta atenta, Renatha transforma ideias e valores em universos visuais autênticos. Cada projeto é elaborado com foco no equilíbrio, tipografia minuciosa e elegância duradoura.
+              Com sensibilidade artística e escuta atenta, Renatha transforma ideias e propósitos em universos visuais autênticos. Cada projeto é elaborado com foco no equilíbrio harmônico, tipografia minuciosa e elegância atemporal.
             </p>
 
             <div class="about-action-wrap">
@@ -443,11 +554,17 @@
       </div>
     </section>
 
-    <!-- SEÇÃO 5: HORÁRIOS & CANAIS OFICIAIS -->
+    <!-- SEÇÃO 5: HORÁRIOS & CANAIS OFICIAIS (Totalmente ajustada para mobile sem quebras) -->
     <section class="section contact-official-section" id="contato" aria-labelledby="contact-title">
+      <div class="parallax-watermark contact-watermark-text" aria-hidden="true">CONTATO</div>
+      <div class="ambient-glow glow-contact-1" aria-hidden="true"></div>
+
       <div class="container">
         <div class="section-header text-center">
-          <span class="section-kicker gsap-fade">Atendimento Oficial</span>
+          <div class="kicker-pill gsap-fade">
+            <span class="kicker-glow-dot" aria-hidden="true"></span>
+            <span class="section-kicker">Atendimento Oficial</span>
+          </div>
           <h2 id="contact-title" class="section-title gsap-fade">
             Canais de Atendimento
           </h2>
@@ -543,17 +660,17 @@
           </div>
         </div>
 
-        <!-- Conclusão com Botão Principal WhatsApp com Shiny Sweep Glow -->
+        <!-- Conclusão com Botão Principal WhatsApp com Shiny Sweep Glow (100% Responsivo no Mobile) -->
         <div class="contact-cta-action text-center gsap-fade">
           <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." 
-             class="btn-primary glow-btn" 
+             class="btn-primary glow-btn btn-cta-responsive" 
              target="_blank" 
              rel="noopener noreferrer"
              id="cta-whatsapp-final">
             <svg class="btn-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
               <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
             </svg>
-            <span>SOLICITAR PROPOSTA NO WHATSAPP</span>
+            <span class="cta-btn-text">SOLICITAR PROPOSTA NO WHATSAPP</span>
           </a>
           <span class="cta-note">Resposta rápida durante nosso horário de atendimento</span>
         </div>
@@ -583,7 +700,7 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-  <!-- Script com Cache-Busting ?v=3 -->
-  <script src="script.js?v=3" defer></script>
+  <!-- Script com Cache-Busting ?v=4 -->
+  <script src="script.js?v=4" defer></script>
 </body>
 </html>
