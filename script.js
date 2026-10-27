@@ -1,20 +1,20 @@
 /**
  * BOAIDEIA — RENATHA CAVALCANTI
- * Script Principal v6: Lenis + GSAP 3.12.5 + ScrollTrigger
- * Animações Puras (Apenas Transform e Opacity, 60/120 fps)
+ * Script Principal v7: Lenis + GSAP 3.12.5 + ScrollTrigger
+ * Parallax Neon que Acompanha o Scroll Descendo, Revelações Fluidas e 60/120 fps
  */
 
 document.addEventListener('DOMContentLoaded', () => {
   const isReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
   /* ==========================================================================
-     1. INICIALIZAÇÃO LENIS (SMOOTH SCROLL) & SINCRONIZAÇÃO GSAP TICKER
+     1. INICIALIZAÇÃO LENIS (SMOOTH SCROLL) & GSAP TICKER
      ========================================================================== */
   let lenis = null;
 
   if (!isReducedMotion && typeof Lenis !== 'undefined') {
     lenis = new Lenis({
-      duration: 1.1,
+      duration: 1.15,
       easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       orientation: 'vertical',
       gestureOrientation: 'vertical',
@@ -36,61 +36,79 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* ==========================================================================
-     2. ANIMAÇÕES GSAP (SOMENTE TRANSFORM E OPACITY — ZERO BLUR / FILTER)
+     2. ANIMAÇÕES GSAP & NEON PARALLAX QUE ACOMPANHA O SCROLL
      ========================================================================== */
   if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined' && !isReducedMotion) {
     gsap.registerPlugin(ScrollTrigger);
 
     // Entrada da Hero
-    const heroElements = document.querySelectorAll('.hero-presentation .gsap-in');
+    const heroElements = document.querySelectorAll('.hero-content .gsap-fade');
     if (heroElements.length > 0) {
       gsap.from(heroElements, {
         opacity: 0,
-        y: 35,
-        duration: 0.85,
-        stagger: 0.08,
-        ease: 'power3.out',
-        clearProps: 'all'
-      });
-    }
-
-    const heroPortrait = document.querySelector('.hero-portrait-stage');
-    if (heroPortrait) {
-      gsap.from(heroPortrait, {
-        opacity: 0,
         y: 40,
-        scale: 0.96,
-        duration: 0.95,
+        duration: 0.9,
+        stagger: 0.12,
         ease: 'power3.out',
-        delay: 0.1,
         clearProps: 'all'
       });
     }
 
-    // Áreas de Atuação: Parallax Tipográfico que Acompanha a Rolagem
-    const parallaxItems = document.querySelectorAll('.areas-typographic-list .parallax-item');
-    if (parallaxItems.length > 0) {
+    const heroVisual = document.querySelector('.hero-visual-stage');
+    if (heroVisual) {
+      gsap.from(heroVisual, {
+        opacity: 0,
+        y: 45,
+        scale: 0.95,
+        duration: 1.0,
+        ease: 'power3.out',
+        delay: 0.15,
+        clearProps: 'all'
+      });
+    }
+
+    // FEIXE DE LUZ NEON QUE DESCE ACOMPANHANDO O SCROLL
+    const neonBeam = document.getElementById('neonScrollBeam');
+    if (neonBeam) {
+      gsap.fromTo(neonBeam, 
+        { y: -60 },
+        {
+          scrollTrigger: {
+            trigger: '.neon-parallax-section',
+            start: 'top 75%',
+            end: 'bottom 25%',
+            scrub: 1.2
+          },
+          y: 420,
+          ease: 'none'
+        }
+      );
+    }
+
+    // CARDS NEON COM PARALLAX NO SCROLL
+    const parallaxCards = document.querySelectorAll('.neon-parallax-track .parallax-card');
+    if (parallaxCards.length > 0) {
       // Entrada
-      gsap.from(parallaxItems, {
+      gsap.from(parallaxCards, {
         scrollTrigger: {
-          trigger: '.areas-neon-section',
-          start: 'top 80%',
+          trigger: '.neon-parallax-section',
+          start: 'top 78%',
           toggleActions: 'play none none none'
         },
         opacity: 0,
-        y: 35,
-        stagger: 0.1,
-        duration: 0.8,
+        y: 50,
+        stagger: 0.12,
+        duration: 0.85,
         ease: 'power3.out',
         clearProps: 'opacity,visibility'
       });
 
-      // Efeito Parallax Individual por Item
-      parallaxItems.forEach((item) => {
-        const speed = parseFloat(item.getAttribute('data-speed')) || 0;
-        gsap.to(item, {
+      // Efeito Parallax Individual por Velocidade
+      parallaxCards.forEach((card) => {
+        const speed = parseFloat(card.getAttribute('data-speed')) || 0;
+        gsap.to(card, {
           scrollTrigger: {
-            trigger: '.areas-neon-section',
+            trigger: '.neon-parallax-section',
             start: 'top bottom',
             end: 'bottom top',
             scrub: 1.2
@@ -101,12 +119,12 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Revelação dos Títulos de Seção
-    const sectionTitles = document.querySelectorAll('.areas-section-title, .exhibition-section-title');
-    sectionTitles.forEach((title) => {
-      gsap.from(title, {
+    // Revelação dos Cabeçalhos de Seção
+    const sectionHeaders = document.querySelectorAll('.section-header-center .gsap-fade');
+    sectionHeaders.forEach((el) => {
+      gsap.from(el, {
         scrollTrigger: {
-          trigger: title,
+          trigger: el,
           start: 'top 88%',
           toggleActions: 'play none none none'
         },
@@ -118,34 +136,17 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    // Revelação Linear dos Trabalhos na Exposição
-    const exhibitionEntries = document.querySelectorAll('.exhibition-entry');
-    exhibitionEntries.forEach((entry) => {
-      gsap.from(entry, {
+    // Revelação dos Itens do Grid Compacto de Projetos
+    const projectItems = document.querySelectorAll('.compact-demonstrative-grid .project-grid-item');
+    if (projectItems.length > 0) {
+      gsap.from(projectItems, {
         scrollTrigger: {
-          trigger: entry,
-          start: 'top 85%',
-          toggleActions: 'play none none none'
-        },
-        opacity: 0,
-        y: 45,
-        duration: 0.85,
-        ease: 'power3.out',
-        clearProps: 'all'
-      });
-    });
-
-    // Revelação da Seção Sobre & Contato
-    const aboutSectionElements = document.querySelectorAll('.about-contact-layout .gsap-in');
-    if (aboutSectionElements.length > 0) {
-      gsap.from(aboutSectionElements, {
-        scrollTrigger: {
-          trigger: '.about-contact-section',
+          trigger: '.compact-demonstrative-grid',
           start: 'top 82%',
           toggleActions: 'play none none none'
         },
         opacity: 0,
-        y: 35,
+        y: 40,
         stagger: 0.1,
         duration: 0.8,
         ease: 'power3.out',
@@ -153,7 +154,24 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     }
 
-    // Refresh do ScrollTrigger após carregamento de todas as imagens
+    // Revelação da Seção de Transição (Sobre + Contato + Final CTA)
+    const transitionElements = document.querySelectorAll('.atmospheric-transition-section .gsap-fade');
+    transitionElements.forEach((el) => {
+      gsap.from(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 86%',
+          toggleActions: 'play none none none'
+        },
+        opacity: 0,
+        y: 35,
+        duration: 0.8,
+        ease: 'power3.out',
+        clearProps: 'all'
+      });
+    });
+
+    // Refresh do ScrollTrigger após o carregamento completo das imagens
     window.addEventListener('load', () => {
       ScrollTrigger.refresh();
     });

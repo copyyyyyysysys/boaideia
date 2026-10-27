@@ -26,19 +26,19 @@
   <meta name="twitter:description" content="Identidades inspiradas na beleza da criação. Marcas, casamentos, maternidade, celebrações e design de posts.">
   <meta name="twitter:image" content="https://boaideia.pages.dev/assets/images/renatha.webp">
 
-  <!-- Theme Color: Areia Editorial / Verde Água Nobre -->
-  <meta name="theme-color" content="#faf8f5">
+  <!-- Theme Color -->
+  <meta name="theme-color" content="#051511">
 
-  <!-- Fontes Google Otimizadas com Swap -->
+  <!-- Fontes Google com Display Swap -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
   <!-- Preload da foto da designer -->
   <link rel="preload" href="assets/images/renatha.webp" as="image" type="image/webp">
 
-  <!-- Estilos com Cache-Busting ?v=6 -->
-  <link rel="stylesheet" href="styles.css?v=6">
+  <!-- Estilos com Cache-Busting ?v=7 -->
+  <link rel="stylesheet" href="styles.css?v=7">
 
   <!-- Schema JSON-LD -->
   <script type="application/ld+json">
@@ -58,323 +58,428 @@
   </script>
 </head>
 <body>
-  <!-- CABEÇALHO DISCRETO & AUTORAL -->
-  <header class="artist-header" id="topo">
-    <div class="header-inner">
-      <a href="#topo" class="header-signature" aria-label="Boaideia - Renatha Cavalcanti">
-        <span class="sig-name">Renatha Cavalcanti</span>
-        <span class="sig-studio">Boaideia</span>
+  <!-- HEADER COM BOTÃO PREMIUM -->
+  <header class="site-header" id="topo">
+    <div class="header-container">
+      <a href="#topo" class="header-brand" aria-label="Boaideia - Renatha Cavalcanti">
+        <span class="brand-monogram">B</span>
+        <div class="brand-titles">
+          <span class="brand-name">BOAIDEIA</span>
+          <span class="brand-designer">Renatha Cavalcanti</span>
+        </div>
       </a>
 
       <nav class="header-nav" aria-label="Navegação do portfólio">
-        <a href="#areas" class="nav-item">Atuação</a>
-        <a href="#exposicao" class="nav-item">Exposição</a>
-        <a href="#sobre" class="nav-item">Sobre & Contato</a>
+        <a href="#areas" class="nav-link">Atuação</a>
+        <a href="#exposicao" class="nav-link">Projetos</a>
+        <a href="#sobre" class="nav-link">A Designer</a>
+        <a href="#contato" class="nav-link">Contato</a>
       </nav>
 
+      <!-- Botão Premium do Header com Shiny Sweep -->
       <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." 
-         class="header-contact-link" 
+         class="btn-header-glow" 
          target="_blank" 
          rel="noopener noreferrer"
-         aria-label="Conversar no WhatsApp">
-        <span>WhatsApp</span>
-        <svg class="link-arrow-icon" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-          <line x1="7" y1="17" x2="17" y2="7"></line>
-          <polyline points="7 7 17 7 17 17"></polyline>
+         aria-label="Atendimento no WhatsApp">
+        <svg class="btn-wa-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
         </svg>
+        <span class="btn-text-desktop">CONVERSAR NO WHATSAPP</span>
+        <span class="btn-text-mobile">WHATSAPP</span>
       </a>
     </div>
   </header>
 
   <main id="conteudo-principal">
-    <!-- SEÇÃO 1: HERO DE PORTFÓLIO DE ARTISTA -->
+    <!-- SEÇÃO 1: HERO DE PORTFÓLIO DE ARTISTA COM BOTÃO PREMIUM -->
     <section class="section hero-artist-section" aria-labelledby="hero-title">
-      <div class="container hero-layout">
-        <div class="hero-presentation">
-          <p class="hero-studio-intro gsap-in">Estúdio de Identidade Visual</p>
-          <h1 id="hero-title" class="hero-artist-name gsap-in">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="hero-kicker-tag gsap-fade">Estúdio Autoral de Identidade Visual</span>
+          <h1 id="hero-title" class="hero-designer-name gsap-fade">
             Renatha Cavalcanti
           </h1>
-          <p class="hero-bio-lead gsap-in">
-            Identidades inspiradas na <em>beleza da criação.</em>
+          <p class="hero-bio-quote gsap-fade">
+            Identidades inspiradas na <span class="highlight-teal">beleza da criação.</span>
           </p>
-          <p class="hero-manifesto-text gsap-in">
-            Marcas, casamentos, maternidade, celebrações e design de posts desenvolvidos com harmonia, cuidado artesanal e narrativa autêntica.
+          <p class="hero-bio-description gsap-fade">
+            Marcas, casamentos, maternidade, celebrações e design de posts desenvolvidos com harmonia estética, narrativa autêntica e cuidado em cada detalhe.
           </p>
 
-          <!-- Convite discreto ao WhatsApp -->
-          <div class="hero-action-line gsap-in">
+          <!-- Botão Canônico Premium com Shiny Sweep Glow -->
+          <div class="hero-cta-wrap gsap-fade">
             <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." 
-               class="discreet-invite-link" 
+               class="btn-canonical-glow" 
                target="_blank" 
                rel="noopener noreferrer"
-               id="whatsapp-hero-link">
-              <span>Iniciar um projeto no WhatsApp</span>
-              <svg class="invite-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
+               id="hero-whatsapp-btn">
+              <svg class="btn-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
               </svg>
+              <span>INICIAR PROJETO NO WHATSAPP</span>
             </a>
+            <span class="cta-micro-note">Atendimento direto com a designer Renatha Cavalcanti</span>
           </div>
         </div>
 
-        <!-- Foto da Designer Integrada ao Cenário (Sem card, sem moldura, sem halo) -->
-        <div class="hero-portrait-stage gsap-in">
+        <!-- Foto da Designer Integrada com Recorte Suave -->
+        <div class="hero-visual-stage gsap-fade">
           <img src="assets/images/renatha.webp" 
                alt="Renatha Cavalcanti" 
                width="640" 
                height="641" 
-               class="artist-clean-photo">
+               class="designer-integrated-photo">
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 2: ÁREAS DE ATUAÇÃO — TIPOGRÁFICA COM NEON FINO E PARALLAX (Sem cards) -->
-    <section class="section areas-neon-section" id="areas" aria-labelledby="areas-title">
+    <!-- SEÇÃO 2: ÁREAS DE ATUAÇÃO — GSAP NEON PARALLAX NO SCROLL COM LINHA PROGRESSIVA -->
+    <section class="section neon-parallax-section" id="areas" aria-labelledby="areas-title">
+      <!-- Linha Vertical de Luz Neon que Acompanha o Scroll Descendo -->
+      <div class="neon-scroll-rail" aria-hidden="true">
+        <div class="neon-scroll-beam" id="neonScrollBeam"></div>
+      </div>
+
       <div class="container">
-        <div class="areas-header">
-          <h2 id="areas-title" class="areas-section-title gsap-in">
+        <div class="section-header-center">
+          <span class="section-kicker-glow gsap-fade">Especialidades</span>
+          <h2 id="areas-title" class="section-title-dark gsap-fade">
             Áreas de Atuação
           </h2>
+          <p class="section-subtitle-dark gsap-fade">
+            Projetos autorais desenvolvidos em diálogo constante com a essência de cada proposta.
+          </p>
         </div>
 
-        <!-- Lista Tipográfica com Fio Neon Preciso e Parallax -->
-        <div class="areas-typographic-list" id="areasList">
-          <!-- Item 1: Marcas -->
-          <div class="area-type-row parallax-item" data-speed="12">
-            <div class="area-num-tag">01</div>
-            <h3 class="area-title-text">Marcas</h3>
-            <div class="area-neon-fine-line" aria-hidden="true"></div>
-          </div>
+        <!-- Cards Neon de Vidro com Parallax Dinâmico Individual por Scroll -->
+        <div class="neon-parallax-track" id="neonTrack">
+          <!-- Card 1: Marcas -->
+          <article class="neon-glass-card parallax-card" data-speed="16" role="article">
+            <div class="neon-card-glow-layer" aria-hidden="true"></div>
+            <div class="neon-card-top">
+              <span class="neon-card-index">01</span>
+              <div class="neon-dot-active" aria-hidden="true"></div>
+            </div>
+            <h3 class="neon-card-title">Marcas</h3>
+            <p class="neon-card-desc">
+              Identidades visuais completas, logotipos, paleta cromática personalizada e papelaria institucional com conceito e harmonia.
+            </p>
+            <div class="neon-card-accent-line" aria-hidden="true"></div>
+          </article>
 
-          <!-- Item 2: Casamentos -->
-          <div class="area-type-row parallax-item" data-speed="-14">
-            <div class="area-num-tag">02</div>
-            <h3 class="area-title-text">Casamentos</h3>
-            <div class="area-neon-fine-line" aria-hidden="true"></div>
-          </div>
+          <!-- Card 2: Casamentos -->
+          <article class="neon-glass-card parallax-card card-offset-stagger" data-speed="-18" role="article">
+            <div class="neon-card-glow-layer" aria-hidden="true"></div>
+            <div class="neon-card-top">
+              <span class="neon-card-index">02</span>
+              <div class="neon-dot-active" aria-hidden="true"></div>
+            </div>
+            <h3 class="neon-card-title">Casamentos</h3>
+            <p class="neon-card-desc">
+              Monogramas entrelaçados, identidade visual completa para a cerimônia, papelaria fina e lembranças que eternizam a união.
+            </p>
+            <div class="neon-card-accent-line" aria-hidden="true"></div>
+          </article>
 
-          <!-- Item 3: Maternidade -->
-          <div class="area-type-row parallax-item" data-speed="16">
-            <div class="area-num-tag">03</div>
-            <h3 class="area-title-text">Maternidade</h3>
-            <div class="area-neon-fine-line" aria-hidden="true"></div>
-          </div>
+          <!-- Card 3: Maternidade -->
+          <article class="neon-glass-card parallax-card" data-speed="20" role="article">
+            <div class="neon-card-glow-layer" aria-hidden="true"></div>
+            <div class="neon-card-top">
+              <span class="neon-card-index">03</span>
+              <div class="neon-dot-active" aria-hidden="true"></div>
+            </div>
+            <h3 class="neon-card-title">Maternidade</h3>
+            <p class="neon-card-desc">
+              Composições visuais afetuosas e delicadas para celebrações de nascimento, anúncios, enxoval e registros de boas-vindas.
+            </p>
+            <div class="neon-card-accent-line" aria-hidden="true"></div>
+          </article>
 
-          <!-- Item 4: Celebrações -->
-          <div class="area-type-row parallax-item" data-speed="-12">
-            <div class="area-num-tag">04</div>
-            <h3 class="area-title-text">Celebrações</h3>
-            <div class="area-neon-fine-line" aria-hidden="true"></div>
-          </div>
+          <!-- Card 4: Celebrações -->
+          <article class="neon-glass-card parallax-card card-offset-stagger" data-speed="-14" role="article">
+            <div class="neon-card-glow-layer" aria-hidden="true"></div>
+            <div class="neon-card-top">
+              <span class="neon-card-index">04</span>
+              <div class="neon-dot-active" aria-hidden="true"></div>
+            </div>
+            <h3 class="neon-card-title">Celebrações</h3>
+            <p class="neon-card-desc">
+              Design temático exclusivo para aniversários, celebrações e datas marcantes com acabamento sofisticado e memorável.
+            </p>
+            <div class="neon-card-accent-line" aria-hidden="true"></div>
+          </article>
 
-          <!-- Item 5: Design de Posts -->
-          <div class="area-type-row parallax-item" data-speed="10">
-            <div class="area-num-tag">05</div>
-            <h3 class="area-title-text">Design de posts</h3>
-            <div class="area-neon-fine-line" aria-hidden="true"></div>
-          </div>
+          <!-- Card 5: Design de Posts -->
+          <article class="neon-glass-card parallax-card card-span-full" data-speed="10" role="article">
+            <div class="neon-card-glow-layer" aria-hidden="true"></div>
+            <div class="neon-card-top">
+              <span class="neon-card-index">05</span>
+              <div class="neon-dot-active" aria-hidden="true"></div>
+            </div>
+            <h3 class="neon-card-title">Design de Posts</h3>
+            <p class="neon-card-desc">
+              Composições digitais consistentes, elegantes e alinhadas à narrativa visual e ao posicionamento de alto padrão nas redes sociais.
+            </p>
+            <div class="neon-card-accent-line" aria-hidden="true"></div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 3: EXPOSIÇÃO DOS TRABALHOS — LINEAR & AUTÊNTICA (Sem cards, sem molduras, apenas títulos) -->
-    <section class="section exhibition-flow-section" id="exposicao" aria-labelledby="exhibition-title">
+    <!-- SEÇÃO 3: EXPOSIÇÃO DE PROJETOS EM GRID COMPACTO & DEMONSTRATIVO (Sem imagens gigantes) -->
+    <section class="section exhibition-grid-section" id="exposicao" aria-labelledby="exhibition-title">
       <div class="container">
-        <div class="exhibition-intro">
-          <h2 id="exhibition-title" class="exhibition-section-title gsap-in">
+        <div class="section-header-center">
+          <span class="section-kicker-clean gsap-fade">Portfólio Selecionado</span>
+          <h2 id="exhibition-title" class="section-title-light gsap-fade">
             Exposição de Trabalhos
           </h2>
+          <p class="section-subtitle-light gsap-fade">
+            Uma mostra curada e demonstrativa de identidades visuais desenvolvidas pela designer Renatha Cavalcanti.
+          </p>
         </div>
 
-        <!-- Fluxo Linear e Alternado com Imagens Contidas -->
-        <div class="exhibition-stream">
-
+        <!-- Grid Demonstrativo, Compacto e Linear -->
+        <div class="compact-demonstrative-grid" role="list">
           <!-- Obra 1: Emylle Costa -->
-          <article class="exhibition-entry align-left gsap-in">
-            <div class="entry-media-holder">
+          <article class="project-grid-item gsap-fade" role="listitem">
+            <div class="project-media-frame">
               <img src="assets/images/projeto-1.webp" 
                    alt="Emylle Costa" 
                    width="900" 
                    height="1124" 
                    loading="lazy" 
-                   class="exhibition-pure-img">
+                   class="project-img-display">
             </div>
-            <h3 class="entry-pure-title">Emylle Costa</h3>
+            <h3 class="project-title-pure">Emylle Costa</h3>
           </article>
 
           <!-- Obra 2: Benito • Café & Arte -->
-          <article class="exhibition-entry align-right gsap-in">
-            <div class="entry-media-holder">
+          <article class="project-grid-item gsap-fade" role="listitem">
+            <div class="project-media-frame">
               <img src="assets/images/projeto-2.webp" 
                    alt="Benito • Café & Arte" 
                    width="900" 
                    height="900" 
                    loading="lazy" 
-                   class="exhibition-pure-img">
+                   class="project-img-display">
             </div>
-            <h3 class="entry-pure-title">Benito • Café & Arte</h3>
+            <h3 class="project-title-pure">Benito • Café & Arte</h3>
           </article>
 
           <!-- Obra 3: Lucy Monte -->
-          <article class="exhibition-entry align-left gsap-in">
-            <div class="entry-media-holder">
+          <article class="project-grid-item gsap-fade" role="listitem">
+            <div class="project-media-frame">
               <img src="assets/images/projeto-3.webp" 
                    alt="Lucy Monte" 
                    width="900" 
                    height="1125" 
                    loading="lazy" 
-                   class="exhibition-pure-img">
+                   class="project-img-display">
             </div>
-            <h3 class="entry-pure-title">Lucy Monte</h3>
+            <h3 class="project-title-pure">Lucy Monte</h3>
           </article>
 
           <!-- Obra 4: JD Beauty -->
-          <article class="exhibition-entry align-right gsap-in">
-            <div class="entry-media-holder">
+          <article class="project-grid-item gsap-fade" role="listitem">
+            <div class="project-media-frame">
               <img src="assets/images/projeto-4.webp" 
                    alt="JD Beauty" 
                    width="900" 
                    height="1125" 
                    loading="lazy" 
-                   class="exhibition-pure-img">
+                   class="project-img-display">
             </div>
-            <h3 class="entry-pure-title">JD Beauty</h3>
+            <h3 class="project-title-pure">JD Beauty</h3>
           </article>
 
           <!-- Obra 5: Dr. Yuri Cássio -->
-          <article class="exhibition-entry align-left gsap-in">
-            <div class="entry-media-holder">
+          <article class="project-grid-item gsap-fade" role="listitem">
+            <div class="project-media-frame">
               <img src="assets/images/projeto-5.webp" 
                    alt="Dr. Yuri Cássio" 
                    width="900" 
                    height="1125" 
                    loading="lazy" 
-                   class="exhibition-pure-img">
+                   class="project-img-display">
             </div>
-            <h3 class="entry-pure-title">Dr. Yuri Cássio</h3>
+            <h3 class="project-title-pure">Dr. Yuri Cássio</h3>
           </article>
 
           <!-- Obra 6: Pedro & Letícia -->
-          <article class="exhibition-entry align-right gsap-in">
-            <div class="entry-media-holder">
+          <article class="project-grid-item gsap-fade" role="listitem">
+            <div class="project-media-frame">
               <img src="assets/images/projeto-6.webp" 
                    alt="Pedro & Letícia" 
                    width="900" 
                    height="1126" 
                    loading="lazy" 
-                   class="exhibition-pure-img">
+                   class="project-img-display">
             </div>
-            <h3 class="entry-pure-title">Pedro & Letícia</h3>
+            <h3 class="project-title-pure">Pedro & Letícia</h3>
           </article>
 
-          <!-- Obra 7: Josyelle Rayane -->
-          <article class="exhibition-entry align-center gsap-in">
-            <div class="entry-media-holder">
+          <!-- Obra 7: Josyelle Rayane (Destaque Central) -->
+          <article class="project-grid-item project-grid-featured gsap-fade" role="listitem">
+            <div class="project-media-frame">
               <img src="assets/images/projeto-7.webp" 
                    alt="Josyelle Rayane" 
                    width="900" 
                    height="1125" 
                    loading="lazy" 
-                   class="exhibition-pure-img">
+                   class="project-img-display">
             </div>
-            <h3 class="entry-pure-title">Josyelle Rayane</h3>
+            <h3 class="project-title-pure">Josyelle Rayane</h3>
           </article>
-
         </div>
       </div>
     </section>
 
-    <!-- SEÇÃO 4: SOBRE A DESIGNER & CONTATO -->
-    <section class="section about-contact-section" id="sobre" aria-labelledby="about-contact-title">
-      <div class="container about-contact-layout">
-        <!-- Foto Integrada -->
-        <div class="about-portrait-col gsap-in">
-          <img src="assets/images/renatha.webp" 
-               alt="Renatha Cavalcanti" 
-               width="640" 
-               height="641" 
-               loading="lazy" 
-               class="artist-clean-photo">
+    <!-- SEÇÃO 4: TRANSIÇÃO GRADUAL & CTA FINAL DE ALTO IMPACTO (Fundo rico, sem terminar branco seco) -->
+    <section class="section atmospheric-transition-section" id="contato" aria-labelledby="contact-title">
+      <!-- Aura de Luz Radiante no Fundo -->
+      <div class="ambient-radiant-glow" aria-hidden="true"></div>
+
+      <div class="container">
+        <!-- Bloco Sobre a Designer -->
+        <div class="about-artist-showcase gsap-fade" id="sobre">
+          <div class="about-photo-wrapper">
+            <img src="assets/images/renatha.webp" 
+                 alt="Renatha Cavalcanti" 
+                 width="640" 
+                 height="641" 
+                 loading="lazy" 
+                 class="about-clean-photo">
+          </div>
+
+          <div class="about-text-wrapper">
+            <span class="about-pre-label">A Designer</span>
+            <h2 class="about-name-title">Renatha Cavalcanti</h2>
+            <p class="about-quote-line">"Identidades inspiradas na beleza da criação."</p>
+            <p class="about-narrative-text">
+              Com sensibilidade artística e escuta atenta, Renatha transforma ideias e propósitos em universos visuais autênticos. Cada projeto é elaborado com foco no equilíbrio harmônico, tipografia minuciosa e elegância atemporal.
+            </p>
+          </div>
         </div>
 
-        <!-- Informações e Canais Oficiais -->
-        <div class="about-info-col">
-          <h2 id="about-contact-title" class="about-designer-name gsap-in">
-            Renatha Cavalcanti
-          </h2>
-          <p class="about-statement gsap-in">
-            "Identidades inspiradas na beleza da criação."
-          </p>
-          <p class="about-narrative gsap-in">
-            Com sensibilidade e atenção a cada detalhe, cada projeto de identidade visual é concebido para traduzir com verdade o valor e a essência de marcas e momentos únicos.
-          </p>
-
-          <!-- Dados Oficiais e Horário da Bio -->
-          <div class="official-data-block gsap-in">
-            <div class="data-entry">
-              <span class="data-label">WhatsApp</span>
-              <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." 
-                 class="data-link" 
-                 target="_blank" 
-                 rel="noopener noreferrer">
-                +55 81 7312-4525
-              </a>
-            </div>
-
-            <div class="data-entry">
-              <span class="data-label">Instagram</span>
-              <a href="https://www.instagram.com/boaiideia/" 
-                 class="data-link" 
-                 target="_blank" 
-                 rel="noopener noreferrer">
-                @boaiideia
-              </a>
-            </div>
-
-            <div class="data-entry">
-              <span class="data-label">Horário de Atendimento</span>
-              <div class="hours-schedule">
-                <span class="hours-line">Segunda a sexta: 08:00 às 18:00</span>
-                <span class="hours-line">Sábado: 08:00 às 14:00</span>
-                <span class="hours-line hours-muted">Domingo: Fechado</span>
+        <!-- Canais de Atendimento & Horários em Vidro Nobre -->
+        <div class="contact-channels-duo gsap-fade">
+          <!-- Card de Horário -->
+          <div class="glass-info-card">
+            <div class="card-title-head">
+              <div class="card-head-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
               </div>
+              <h3 id="contact-title" class="card-head-text">Horário de Atendimento</h3>
             </div>
+            <ul class="timetable-list" role="list">
+              <li class="timetable-item">
+                <span class="time-day">Segunda a sexta</span>
+                <span class="time-hour">08:00 às 18:00</span>
+              </li>
+              <li class="timetable-item">
+                <span class="time-day">Sábado</span>
+                <span class="time-hour">08:00 às 14:00</span>
+              </li>
+              <li class="timetable-item time-closed">
+                <span class="time-day">Domingo</span>
+                <span class="time-hour">Fechado</span>
+              </li>
+            </ul>
           </div>
 
-          <!-- Convite Discreto -->
-          <div class="final-contact-invite gsap-in">
-            <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." 
-               class="discreet-invite-link" 
-               target="_blank" 
-               rel="noopener noreferrer"
-               id="whatsapp-final-link">
-              <span>Falar diretamente no WhatsApp</span>
-              <svg class="invite-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <line x1="5" y1="12" x2="19" y2="12"></line>
-                <polyline points="12 5 19 12 12 19"></polyline>
-              </svg>
-            </a>
+          <!-- Card de Canais Oficiais -->
+          <div class="glass-info-card">
+            <div class="card-title-head">
+              <div class="card-head-icon" aria-hidden="true">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#2dd4bf" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <h3 class="card-head-text">Canais Oficiais</h3>
+            </div>
+            <div class="channels-stack">
+              <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." 
+                 class="channel-pill-action" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="WhatsApp Oficial de Renatha Cavalcanti">
+                <div class="channel-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+                  </svg>
+                </div>
+                <div class="channel-info-col">
+                  <span class="channel-label">WhatsApp Oficial</span>
+                  <span class="channel-val">+55 81 7312-4525</span>
+                </div>
+                <div class="channel-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                </div>
+              </a>
+
+              <a href="https://www.instagram.com/boaiideia/" 
+                 class="channel-pill-action" 
+                 target="_blank" 
+                 rel="noopener noreferrer"
+                 aria-label="Instagram Oficial @boaiideia">
+                <div class="channel-icon-box">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                  </svg>
+                </div>
+                <div class="channel-info-col">
+                  <span class="channel-label">Instagram Oficial</span>
+                  <span class="channel-val">@boaiideia</span>
+                </div>
+                <div class="channel-arrow" aria-hidden="true">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17l9.2-9.2M17 17V8H8"/></svg>
+                </div>
+              </a>
+            </div>
           </div>
+        </div>
+
+        <!-- Botão Final Monumental com Efeito de Luz Shiny Sweep Glow -->
+        <div class="final-grand-action text-center gsap-fade">
+          <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." 
+             class="btn-canonical-glow btn-monumental-size" 
+             target="_blank" 
+             rel="noopener noreferrer"
+             id="final-whatsapp-btn">
+            <svg class="btn-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/>
+            </svg>
+            <span>SOLICITAR PROPOSTA NO WHATSAPP</span>
+          </a>
+          <span class="final-micro-notice">Resposta rápida durante nosso horário de atendimento</span>
         </div>
       </div>
     </section>
 
-    <!-- RODAPÉ MINIMALISTA -->
+    <!-- RODAPÉ DE ALTA COSTURA -->
     <footer class="site-footer">
-      <div class="container footer-inner">
-        <div class="footer-brand-line">
-          <span class="footer-sig">BOAIDEIA</span>
-          <span class="footer-sep">•</span>
-          <span class="footer-designer">Renatha Cavalcanti</span>
+      <div class="container footer-content-box">
+        <div class="footer-divider-glow" aria-hidden="true"></div>
+        <div class="footer-brand-signature">
+          <span class="brand-word">BOAIDEIA</span>
+          <span class="sep-dot" aria-hidden="true">•</span>
+          <span class="designer-word">Renatha Cavalcanti</span>
         </div>
-        <p class="footer-quote">"Identidades inspiradas na beleza da criação."</p>
-        <div class="footer-links">
+        <p class="footer-quote-text">"Identidades inspiradas na beleza da criação."</p>
+        <div class="footer-social-links">
           <a href="https://www.instagram.com/boaiideia/" target="_blank" rel="noopener noreferrer">Instagram</a>
-          <span class="footer-sep">•</span>
+          <span class="sep-dot" aria-hidden="true">•</span>
           <a href="https://wa.me/558173124525?text=Ol%C3%A1%2C%20vim%20pelo%20Instagram%20e%20quero%20falar%20sobre%20um%20projeto%20de%20identidade%20visual." target="_blank" rel="noopener noreferrer">WhatsApp</a>
         </div>
-        <p class="footer-rights">Todos os direitos reservados.</p>
+        <p class="footer-copyright">Todos os direitos reservados.</p>
       </div>
     </footer>
   </main>
@@ -383,7 +488,7 @@
   <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" defer></script>
-  <!-- Script Principal com Cache-Busting ?v=6 -->
-  <script src="script.js?v=6" defer></script>
+  <!-- Script Principal com Cache-Busting ?v=7 -->
+  <script src="script.js?v=7" defer></script>
 </body>
 </html>
